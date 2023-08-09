@@ -1,8 +1,13 @@
 {
     "cSpell.words": [
+        "autoflush",
         "createposts",
         "fastapi",
         "psycopg",
-        "pydantic"
+        "pydantic",
+        "sessionmaker",
+        "sqlalchemy",
+        "SQLALCHMEY",
+        "sqltypes"
     ]
 }
