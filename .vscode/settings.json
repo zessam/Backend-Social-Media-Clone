@@ -3,6 +3,7 @@
         "autoflush",
         "createposts",
         "fastapi",
+        "passlib",
         "psycopg",
         "pydantic",
         "sessionmaker",
