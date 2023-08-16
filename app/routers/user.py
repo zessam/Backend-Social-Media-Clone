@@ -20,6 +20,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
+
     return new_user   
 
 @router.get('/{id}', response_model=schemas.UserResponse)
@@ -29,4 +30,5 @@ def get_user(id:int,  db: Session = Depends(get_db)):
     if  not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
                             detail=f"user with id: {id} does not exist")
+     
     return user
