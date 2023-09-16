@@ -3,6 +3,7 @@
         "autoflush",
         "createposts",
         "fastapi",
+        "ondelete",
         "passlib",
         "psycopg",
         "pydantic",
