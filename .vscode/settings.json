@@ -8,6 +8,7 @@
         "psycopg",
         "pydantic",
         "sessionmaker",
+        "sfdrrrs",
         "sqlalchemy",
         "SQLALCHMEY",
         "sqltypes"
