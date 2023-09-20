@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "autoflush",
+        "conint",
         "createposts",
         "fastapi",
         "ondelete",
