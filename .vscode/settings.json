@@ -4,6 +4,7 @@
         "conint",
         "createposts",
         "fastapi",
+        "isouter",
         "ondelete",
         "passlib",
         "psycopg",
