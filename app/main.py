@@ -4,7 +4,7 @@ from .database import engine
 from .routers import post, user, auth, vote
 from .config import settings
 
-
+# Comment this if u want to disable the sqlalchemy engine
 models.Base.metadata.create_all(bind=engine)
 
 

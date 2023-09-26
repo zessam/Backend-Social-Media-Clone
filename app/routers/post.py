@@ -132,9 +132,11 @@ def delete_post(id: int, db: Session = Depends(get_db),  current_user: int = Dep
 
 
 @router.put("/{id}", response_model=schemas.Post)
-def update_post(id: int, post: schemas.PostCreate, db: Session = Depends(get_db),  current_user: int = Depends(oauth2.get_current_user)):
+def update_post(id: int, updated_post: schemas.PostCreate, db: Session = Depends(get_db), current_user: int = Depends(oauth2.get_current_user)):
+
     # cursor.execute("""UPDATE posts SET title = %s, content = %s, published = %s WHERE id = %s RETURNING *""",
-    #                (post.title, post.content, post.published, (str(id))))
+    #                (post.title, post.content, post.published, str(id)))
+
     # updated_post = cursor.fetchone()
     # conn.commit()
 
@@ -148,9 +150,10 @@ def update_post(id: int, post: schemas.PostCreate, db: Session = Depends(get_db)
 
     if post.owner_id != current_user.id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
-                            detail="Not Authorized to perform requested action")
+                            detail="Not authorized to perform requested action")
 
-    post_query.update(post.dict(), synchronize_session=False)
+    post_query.update(updated_post.dict(), synchronize_session=False)
+
     db.commit()
 
     return post_query.first()
