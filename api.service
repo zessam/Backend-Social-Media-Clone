@@ -1,0 +1,14 @@
+[Unit]
+Description=demo fastapi application
+After=network.target
+
+[Service]
+User=zezo-api
+Group=zezo-api
+WorkingDirectory=/home/zezo-api/app/src/
+Environment="PATH=/home/zezo-api/app/venv/bin"
+EnvironmentFile=/home/zezo-api/.env
+ExecStart=/home/zezo-api/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
