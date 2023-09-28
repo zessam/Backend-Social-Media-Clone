@@ -22,7 +22,7 @@
 First, clone this repo by using the following command
 ````
 
-git clone https://github.com/zezo-rgb/Backend-Social-Media-Clone.git
+git clone https://github.com/zessam/Backend-Social-Media-Clone.git
 
 ````
 then 
